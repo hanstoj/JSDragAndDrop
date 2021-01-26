@@ -75,7 +75,10 @@ backlogListArray.forEach((backlogItems, Index) => {
   createItemEl(backlogList,0, backlogItems, index)
 })
   // Progress Column
-
+  progressList.textContent = '';
+  progressListArray.forEach((progressItem, Index) => {
+    createItemEl(progressList,0, progressItems, index)
+  })
   // Complete Column
 
   // On Hold Column
