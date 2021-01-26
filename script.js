@@ -76,13 +76,18 @@ backlogListArray.forEach((backlogItems, Index) => {
 })
   // Progress Column
   progressList.textContent = '';
-  progressListArray.forEach((progressItem, Index) => {
+  progressListArray.forEach((progressItems, Index) => {
     createItemEl(progressList,0, progressItems, index)
   })
   // Complete Column
-
+  completeList.textContent = '';
+  completeListArray.forEach((completeItems, Index) => {
+    createItemEl(completeList,0, completeItems, index)
+  })
   // On Hold Column
-
+  onHoldList.textContent = '';
+  onHoldListArray.forEach((onHoldItems, Index) => {
+    createItemEl(onHoldList,0, onHoldItems, index)
   // Run getSavedColumns only once, Update Local Storage
 
 
