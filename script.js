@@ -43,7 +43,8 @@ function updateSavedColumns() {
   localStorage.setItem('completeItems', JSON.stringify(completeListArray));
   localStorage.setItem('onHoldItems', JSON.stringify(onHoldListArray));
 }
-
+getSavedColumns();
+updateSavedColumns();
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
   console.log('columnEl:', columnEl);
@@ -72,4 +73,3 @@ function updateDOM() {
 
 
 }
-
