@@ -36,21 +36,23 @@ function getSavedColumns() {
     onHoldListArray = ['Being uncool'];
   }
 }
+getSavedColumns();
+updateSavedColumns();
 
 // Set localStorage Arrays
 function updateSavedColumns() {
-  listArrays = [backlogList,progressList, completeList, onHoldList];
+  listArrays = [backlogListArray,progressListArray, completeListArray, onHoldListArray];
   const arrayNames = ['backlog', 'progress', 'complete', 'onHold'];
   arrayNames.forEach((arrayName, index) => {
-    localStorage.setItem(`${arrayName}Items`,JSON.stringify(listArrays[index]));
-  })
+    localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArrays[index]))
+  });
   // localStorage.setItem('backlogItems', JSON.stringify(backlogListArray));
   // localStorage.setItem('progressItems', JSON.stringify(progressListArray));
   // localStorage.setItem('completeItems', JSON.stringify(completeListArray));
   // localStorage.setItem('onHoldItems', JSON.stringify(onHoldListArray));
 }
-getSavedColumns();
-updateSavedColumns();
+
+
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
   // console.log('columnEl:', columnEl);
@@ -69,29 +71,29 @@ function createItemEl(columnEl, column, item, index) {
 // Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
   // Check localStorage once
-if (!updatedOnLoad){
-  getSavedColumns()
-}
-  // Backlog Column
-backlogList.textContent = '';
-backlogListArray.forEach((backlogItems, Index) => {
-  createItemEl(backlogList,0, backlogItems, index)
-})
-  // Progress Column
-progressList.textContent = '';
-progressListArray.forEach((progressItems, Index) => {
-  createItemEl(progressList,0, progressItems, index)
-})
-// Complete Column
-completeList.textContent = '';
-completeListArray.forEach((completeItems, Index) => {
-  createItemEl(completeList,0, completeItems, index)
-})
-// On Hold Column
-onHoldList.textContent = '';
-onHoldListArray.forEach((onHoldItems, Index) => {
-  createItemEl(onHoldList,0, onHoldItems, index)
-})
+  if (!updatedOnLoad){
+    getSavedColumns();
+  }
+    // Backlog Column
+  backlogList.textContent = '';
+  backlogListArray.forEach((backlogItem, index) => {
+    createItemEl(backlogList,0, backlogItem, index)
+  })
+    // Progress Column
+  progressList.textContent = '';
+  progressListArray.forEach((progressItem, index) => {
+    createItemEl(progressList,0, progressItem, index)
+  })
+  // Complete Column
+  completeList.textContent = '';
+  completeListArray.forEach((completeItem, index) => {
+    createItemEl(completeList,0, completeItem, index)
+  })
+  // On Hold Column
+  onHoldList.textContent = '';
+  onHoldListArray.forEach((onHoldItem, index) => {
+    createItemEl(onHoldList,0, onHoldItem, index)
+  })
   // Run getSavedColumns only once, Update Local Storage
 
 
