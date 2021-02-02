@@ -105,5 +105,17 @@ function drag(e){
   draggedItem = e.target;
   console.log('draggedItem:', draggedItem)
 }
+
+// Column Allows  for Item to Drop
+function allowDrop(e){
+  e.preventDefault();
+}
+
+// Dropping Item in Column
+function drop(e){
+  e.preventDefault();
+}
+
+
 // on load
 updateDOM();
